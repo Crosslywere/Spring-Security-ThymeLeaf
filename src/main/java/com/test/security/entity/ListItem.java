@@ -18,13 +18,14 @@ public class ListItem {
     @GeneratedValue
     private Long id;
 
-    private Integer index;
+    @Builder.Default
+    private String message = "";
 
-    private String message;
+    @Builder.Default
+    private Boolean checked = false;
 
-    private Boolean checked;
-
-    @ManyToOne
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "BELONG_TO")
     private User belongsTo;
 
 }

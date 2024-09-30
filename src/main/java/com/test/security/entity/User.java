@@ -23,13 +23,14 @@ public class User implements UserDetails {
     @GeneratedValue
     private Long id;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String email;
 
     private String firstname;
 
     private String lastname;
 
+    @Column(nullable = false)
     private String password;
 
     @Override
